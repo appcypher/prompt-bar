@@ -14,6 +14,7 @@ import { listen } from '@tauri-apps/api/event';
 const KEY_ESCAPE = "Escape";
 
 const WINDOW_DID_BECOME_KEY = "window_did_become_key";
+
 const WINDOW_DID_RESIGN_KEY = "window_did_resign_key";
 
 //--------------------------------------------------------------------------------------------------
@@ -36,19 +37,17 @@ const App: Component = () => {
 
   onMount(() => {
     listen(WINDOW_DID_BECOME_KEY, (_) => {
-      console.log("Window did become key: Attempt to focus on element!");
       inputElementRef.focus();
     });
 
     listen(WINDOW_DID_RESIGN_KEY, (_) => {
-      console.log("Window did resign key: Attempt to blur on element!");
       inputElementRef.blur();
     });
   });
 
   return (
-    <form>
-      <input ref={inputElementRef} type="text" placeholder="Search" class={styles.input} />
+    <form data-tauri-drag-region>
+      <input data-tauri-drag-region ref={inputElementRef} type="text" placeholder="Search" class={styles.input} />
     </form>
   );
 };
