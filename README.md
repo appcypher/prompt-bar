@@ -4,7 +4,7 @@
 </div>
 
 > [!NOTE]
-> This project showcases how to use the [`Tauri`](https://tauri.app) to create a spotlight-like application for macOS.
+> This project showcases how to use [`Tauri`](https://tauri.app) to create a spotlight-like application for macOS.
 >
 > This project is meant for educational purposes only.
 
